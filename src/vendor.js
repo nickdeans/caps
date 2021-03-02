@@ -3,6 +3,8 @@
 const Events = require('events');
 const faker = require('faker');
 const eventEmitter = new Events();
+const eventPool = require('./events.js');
+
 
 setInterval(() => {
     const newObj = new Vendor();

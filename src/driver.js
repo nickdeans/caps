@@ -2,11 +2,10 @@
 
 const Events = require('events');
 const eventEmitter = new Events();
+const eventPool = require('./events.js');
 
-// function driverEvents(payload) {
-// }
-
-eventEmitter.on('pickup', async (payload) => {
+// I believe I have to use this and connect to the callback in caps.js
+function driverEvents(payload) {
     setTimeout(() => {
         console.log(`DRIVER: picked up ${payload.vendor.orderId}`);
         eventEmitter.emit('in-transit', payload);
@@ -15,7 +14,10 @@ eventEmitter.on('pickup', async (payload) => {
         console.log('delivered');
         eventEmitter.emit('delivered', payload);
     }, 3000)
-});
+}
+
+// eventEmitter.on('pickup', async (payload) => {
+// });
 
 module.exports = {
     driverEvents

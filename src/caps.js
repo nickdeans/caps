@@ -7,9 +7,9 @@ const driver = require('./driver.js');
 
 const vendorInterface = new Vendor();
 
-eventPool.on('pickup', driver)
+eventPool.on('pickup', driver.driverEvents);
 
 // Artificial interaction point
 setInterval(() => {
-    eventPool('pickup', { message: vendorInterface.create('Nick test')})
+    eventPool.emit('pickup', { storeName: "nicks", orderId: "24", customername: "bob", address: '711 Montana ave'})
 }, 2000)

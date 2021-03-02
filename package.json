@@ -4,11 +4,14 @@
   "description": "",
   "main": "messenger.js",
   "dependencies": {
-    "faker": "^5.4.0"
+    "dotenv": "^8.2.0",
+    "faker": "^5.4.0",
+    "jest": "^26.6.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
