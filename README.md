@@ -5,7 +5,7 @@ I created the start of an application that emulates a real world supply chain. T
 Nick Abramowicz
 
 ## Github Pull Request(s)
-- 
+- https://github.com/nickdeans/caps/pull/1
 
 ## UML 
 ![UML](./assets/UML.png)
