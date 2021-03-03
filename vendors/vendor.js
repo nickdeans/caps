@@ -2,15 +2,17 @@
 
 require('dotenv').config();
 const faker = require('faker');
-const eventPool = require('./events.js');
+const io = require('socket.io-client');
+const capsURL = 'http://localhost:3000/caps';
+const capsServer = io.connect(capsURL);
 
 
 setInterval(() => {
     const newObj = new Vendor();
-    eventPool.emit('pickup', { payload: newObj});
+    capsServer.emit('pickup', { payload: newObj});
 }, 5000)
 
-eventPool.on('delivered', async (payload) => {
+capsServer.on('delivered', async (payload) => {
     console.log('thank you', payload);
 });
 
@@ -23,6 +25,6 @@ class Vendor {
     }
 }
 
-module.exports = {
-    Vendor,
-}
+// module.exports = {
+//     Vendor,
+// }
