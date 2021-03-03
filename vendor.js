@@ -1,17 +1,16 @@
 'use strict';
 
-const Events = require('events');
+require('dotenv').config();
 const faker = require('faker');
-const eventEmitter = new Events();
 const eventPool = require('./events.js');
 
 
 setInterval(() => {
     const newObj = new Vendor();
-    eventEmitter.emit('pickup', { payload: newObj});
+    eventPool.emit('pickup', { payload: newObj});
 }, 5000)
 
-eventEmitter.on('delivered', async (payload) => {
+eventPool.on('delivered', async (payload) => {
     console.log('thank you', payload);
 });
 
@@ -22,4 +21,8 @@ class Vendor {
         this.customerName = faker.name.findName(),
         this.address = faker.address.streetAddress();
     }
+}
+
+module.exports = {
+    Vendor,
 }
