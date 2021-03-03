@@ -6,6 +6,7 @@ Nick Abramowicz
 
 ## Github Pull Request(s)
 - https://github.com/nickdeans/caps/pull/1
+- https://github.com/nickdeans/caps/pull/2
 
 ## UML 
 ![UML](./assets/UML.png)
