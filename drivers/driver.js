@@ -5,7 +5,7 @@ const io = require('socket.io-client');
 const capsURL = 'http://localhost:3000/caps';
 const capsServer = io.connect(capsURL);
 
-// I believe I have to use this and connect to the callback in caps.js
+// wait for pick up event to be emitted from server
 capsServer.on('pickup', payload => {
     setTimeout(() => {
         console.log(`DRIVER: picked up ${payload.payload.orderId}`);
@@ -19,9 +19,3 @@ capsServer.on('pickup', payload => {
 
     
 
-// eventPool.on('pickup', async (payload) => {
-// });
-
-// module.exports = {
-//     driverEvents
-// }

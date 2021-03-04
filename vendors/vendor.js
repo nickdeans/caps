@@ -24,7 +24,3 @@ class Vendor {
         this.address = faker.address.streetAddress();
     }
 }
-
-// module.exports = {
-//     Vendor,
-// }
